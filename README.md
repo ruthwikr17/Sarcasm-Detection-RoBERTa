@@ -49,8 +49,8 @@ RoBERTa-Sarcasm-Project/
 		• Git  
 
 **- Installation & Setup**  
-		1 **Clone the repository**:  git clone https://github.com/YourUsername/YourRepositoryName.git  
-                               cd YourRepositoryName   <br>
+		1 **Clone the repository**:  git clone https://github.com/ruthwikr17/Sarcasm-Detection-RoBERTa 
+                               cd Sarcasm-Detection-RoBERTa    <br>
 		2 **Create a virtual environment (recommended)**:  python -m venv venv  
           	                                     source venv/bin/activate  # On Windows, use `venv\Scripts\activate`  
 		3 **Install the required packages**:  pip install torch transformers datasets pandas scikit-learn matplotlib seaborn  <br><br>
