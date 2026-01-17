@@ -121,11 +121,11 @@ Sarcasm-Detection-RoBERTa/
 
 
 ## Dashboard Capabilities <br>
-•	Enter any tweet or sentence
-•	Select BERT or RoBERTa model
-•	Detect sarcasm in real-time
-•	View prediction label and confidence
-•	Compare both models on same input
+•	Enter any tweet or sentence <br>
+•	Select BERT or RoBERTa model <br>
+•	Detect sarcasm in real-time <br>
+•	View prediction label and confidence <br>
+•	Compare both models on same input <br>
 
 ## Example Predictions
 
@@ -138,9 +138,9 @@ Confidence: 0.9997 <br>
 
 
 ## Future Enhancements
-•	Multilingual sarcasm detection
-•	Larger and more diverse datasets
-•	Context-aware conversation-based sarcasm detection
+•	Multilingual sarcasm detection <br>
+•	Larger and more diverse datasets <br>
+•	Context-aware conversation-based sarcasm detection <br>
 
 ## Author
 
