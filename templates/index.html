@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sarcasm Detection Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Transformers-based Sarcasm Detection</h1>
+
+    <form method="POST">
+
+        <textarea name="tweet" placeholder="Enter your tweet here..." required>{{ tweet }}</textarea>
+
+        <div class="controls">
+            <select name="model">
+                <option value="bert" {% if selected_model=="bert" %}selected{% endif %}>BERT</option>
+                <option value="roberta" {% if selected_model=="roberta" %}selected{% endif %}>RoBERTa</option>
+            </select>
+
+            <button type="submit" name="action" value="detect">Detect Sarcasm</button>
+            <button type="submit" name="action" value="compare">Compare Models</button>
+        </div>
+    </form>
+
+    {% if result %}
+    <div class="result-box">
+        <div class="prediction">{{ result }}</div>
+
+        <div class="meta">
+            <div><span>Model Used</span><strong>{{ model_used }}</strong></div>
+            <div><span>Confidence</span><strong>{{ confidence }}</strong></div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if compare_results %}
+    <div class="compare-box">
+
+        <h2>Model Comparison</h2>
+
+        <div class="compare-grid">
+
+            <div class="model-card">
+                <div class="model-name">BERT</div>
+                <div class="model-pred">{{ compare_results.bert_pred }}</div>
+                <div class="model-conf">Confidence: {{ compare_results.bert_conf }}</div>
+            </div>
+
+            <div class="model-card">
+                <div class="model-name">RoBERTa</div>
+                <div class="model-pred">{{ compare_results.roberta_pred }}</div>
+                <div class="model-conf">Confidence: {{ compare_results.roberta_conf }}</div>
+            </div>
+
+        </div>
+
+        <div class="better">
+            Better Model: <strong>{{ compare_results.better }}</strong>
+        </div>
+
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

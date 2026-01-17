@@ -1,0 +1,361 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 .SFNS-Semibold;\f1\fnil\fcharset0 .SFNS-Regular;\f2\fswiss\fcharset0 Helvetica;
+\f3\fnil\fcharset0 HelveticaNeue-Bold;\f4\fnil\fcharset0 .AppleSystemUIFontMonospaced-Regular;\f5\froman\fcharset0 Times-Bold;
+\f6\froman\fcharset0 Times-Roman;\f7\fnil\fcharset128 HiraginoSans-W3;}
+{\colortbl;\red255\green255\blue255;\red14\green14\blue14;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c6700\c6700\c6700;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww17760\viewh11500\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs44 \cf2 Sarcasm Detection using Transformer Models
+\f1\b0\fs28 \
+\
+A complete end-to-end NLP system that detects sarcasm in short-form text using fine-tuned Transformer models.\
+The project includes model training pipelines, evaluation scripts, and a modern Flask-based web dashboard for real-time sarcasm prediction and model comparison.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f1\fs28 \cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs34 \cf2 Project Overview
+\f1\b0\fs28 \
+\
+Sarcasm often expresses meaning opposite to literal text, making it difficult for traditional sentiment analysis systems to interpret correctly.\
+This project builds a 
+\f3\b context-aware sarcasm detection system
+\f1\b0  by fine-tuning Transformer-based language models to classify tweets as:\
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	
+\f3\b Sarcastic
+\f1\b0 \
+	\'95	
+\f3\b Not Sarcastic
+\f1\b0 \
+\
+In addition to training high-performing models, the project provides an 
+\f3\b interactive web dashboard
+\f1\b0  where users can enter any text, select a model, and instantly receive sarcasm predictions with confidence scores.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f1\fs28 \cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs34 \cf2 Key Features
+\f1\b0\fs28 \
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	Fine-tuned 
+\f3\b BERT
+\f1\b0  and 
+\f3\b RoBERTa
+\f1\b0  models for sarcasm classification\
+	\'95	Real-time 
+\f3\b Flask dashboard
+\f1\b0  for single-text prediction\
+	\'95	
+\f3\b Model comparison mode
+\f1\b0  to evaluate BERT vs RoBERTa on the same input\
+	\'95	Confidence visualization for each prediction\
+	\'95	Clean, dark-themed UI for demonstration and deployment\
+	\'95	Modular training, evaluation, and inference scripts\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f1\fs28 \cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs34 \cf2 Technologies Used
+\f1\b0\fs28 \
+\
+
+\f3\b Programming Language
+\f1\b0 \
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	Python 3.9+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f3\b \cf2 Deep Learning & NLP
+\f1\b0 \
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	PyTorch\
+	\'95	Hugging Face Transformers\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f3\b \cf2 Models
+\f1\b0 \
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	BERT (bert-base-uncased)\
+	\'95	RoBERTa (roberta-base)\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f3\b \cf2 Data Processing
+\f1\b0 \
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	Pandas, NumPy\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f3\b \cf2 Evaluation
+\f1\b0 \
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	Scikit-learn (Accuracy, Precision, Recall, F1-score)\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f3\b \cf2 Web Deployment
+\f1\b0 \
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	Flask\
+	\'95	HTML, CSS, JavaScript\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f1\fs28 \cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs34 \cf2 Dataset
+\f1\b0\fs28 \
+\
+The models are trained and evaluated on labeled tweet datasets containing sarcastic and non-sarcastic samples.\
+\
+Binary Classification Labels:\
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	
+\f4 1
+\f1  \uc0\u8594  Sarcastic\
+	\'95	
+\f4 0
+\f1  \uc0\u8594  Not Sarcastic\
+\
+Data preprocessing includes:\
+	\'95	Cleaning and normalization\
+	\'95	Class balancing\
+	\'95	Tokenization using model-specific tokenizers\
+	\'95	Train-test split to avoid data leakage\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f1\fs28 \cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs34 \cf2 System Workflow\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f1\b0\fs28 \cf2 Input Tweet\
+     \uc0\u8595 \
+Tokenizer (BERT / RoBERTa)\
+     \uc0\u8595 \
+Fine-tuned Transformer Model\
+     \uc0\u8595 \
+Softmax Classification Layer\
+     \uc0\u8595 \
+Prediction + Confidence Score\
+     \uc0\u8595 \
+Web Dashboard Output\
+\
+\
+\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth969\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx1728
+\clvertalc \clshdrawnil \clwWidth973\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx3456
+\clvertalc \clshdrawnil \clwWidth942\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5184
+\clvertalc \clshdrawnil \clwWidth640\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6912
+\clvertalc \clshdrawnil \clwWidth915\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+
+\f5\b\fs24 \cf0 \expnd0\expndtw0\kerning0
+Model\cell 
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+\cf0 Accuracy\cell 
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+\cf0 Precision\cell 
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+\cf0 Recall\cell 
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+\cf0 F1-Score\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth969\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx1728
+\clvertalc \clshdrawnil \clwWidth973\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx3456
+\clvertalc \clshdrawnil \clwWidth942\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5184
+\clvertalc \clshdrawnil \clwWidth640\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6912
+\clvertalc \clshdrawnil \clwWidth915\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+
+\f6\b0 \cf0 RoBERTa\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 0.885\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 0.871\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 0.899\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 0.885\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth969\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx1728
+\clvertalc \clshdrawnil \clwWidth973\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx3456
+\clvertalc \clshdrawnil \clwWidth942\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5184
+\clvertalc \clshdrawnil \clwWidth640\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6912
+\clvertalc \clshdrawnil \clwWidth915\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 BERT\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 0.862\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 0.845\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 0.881\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 0.863\
+\
+\cell \lastrow\row
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f1\fs28 \cf2 \kerning1\expnd0\expndtw0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs34 \cf2 Project Structure
+\f1\b0\fs28 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+\cf2 \
+Sarcasm-Detection-RoBERTa/\
+\uc0\u9474 \
+
+\f7 \'84\'a5\'84\'9f\'84\'9f
+\f1  app.py                     \
+
+\f7 \'84\'a5\'84\'9f\'84\'9f
+\f1  templates/                \
+
+\f7 \'84\'a5\'84\'9f\'84\'9f
+\f1  static/                \
+\uc0\u9474 \
+
+\f7 \'84\'a5\'84\'9f\'84\'9f
+\f1  Bert.py                   \
+
+\f7 \'84\'a5\'84\'9f\'84\'9f
+\f1  RoBERTa.py          \
+
+\f7 \'84\'a5\'84\'9f\'84\'9f
+\f1  TestBert.py                \
+
+\f7 \'84\'a5\'84\'9f\'84\'9f
+\f1  TestRoberta.py   \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f7 \cf2 \'84\'a5\'84\'9f\'84\'9f
+\f1  metrics.py                \
+
+\f7 \'84\'a5\'84\'9f\'84\'9f
+\f1  Cleanup.py             \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+\cf2 \uc0\u9474 \
+
+\f7 \'84\'a5\'84\'9f\'84\'9f
+\f1  Data/                    \
+
+\f7 \'84\'a5\'84\'9f\'84\'9f
+\f1  requirements.txt\
+
+\f2 \uc0\u9492 \u9472 \u9472 
+\f1  README.md\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs34 \cf2 Running the Web Dashboard
+\f1\b0\fs28 \cf2 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs30 \cf2 Install Dependencies\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f1\b0\fs28 \cf2 pip install -r requirements.txt\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs30 \cf2 Run Flask App\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f1\b0\fs28 \cf2 python app.py\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs30 \cf2 \
+Open in Browser\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f1\b0\fs28 \cf2 http://127.0.0.1:5000/
+\f0\b\fs30 \cf2 \
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\fs34 \cf2 Dashboard Capabilities
+\f1\b0\fs28 \cf2 \
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	Enter any tweet or sentence\
+	\'95	Select BERT or RoBERTa model\
+	\'95	Detect sarcasm in real-time\
+	\'95	View prediction label and confidence\
+	\'95	Compare both models on same input\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs34 \cf2 Example Predictions
+\f1\b0\fs28 \cf2 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f3\b \cf2 Input:
+\f1\b0 \cf2 \
+\'93Oh great, another meeting that could\'92ve been an email. Fantastic.\'94\
+\
+
+\f3\b \cf2 Output:
+\f1\b0 \cf2 \
+Prediction: 
+\f3\b \cf2 Sarcastic
+\f1\b0 \cf2 \
+Confidence: 
+\f3\b \cf2 0.9997\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs34 \cf2 Future Enhancements
+\f1\b0\fs28 \cf2 \
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	Multilingual sarcasm detection\
+	\'95	Larger and more diverse datasets\
+	\'95	Context-aware conversation-based sarcasm detection\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs34 \cf2 Author
+\f1\b0\fs28 \cf2 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f3\b \cf2 Ruthvik Reddy
+\f1\b0 \cf2 \
+AI / ML Developer\
+GitHub: https://github.com/ruthwikr17}

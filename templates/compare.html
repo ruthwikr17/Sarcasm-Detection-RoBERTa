@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compare Models</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="nav">
+    <a href="/">Single Prediction</a>
+    <a href="/compare">Compare Models</a>
+    <a href="/batch">Batch Prediction</a>
+</div>
+
+<div class="container">
+    <h2>Compare BERT vs RoBERTa</h2>
+
+    <form method="POST">
+        <textarea name="tweet" placeholder="Enter tweet..." required>{{ tweet }}</textarea>
+        <button type="submit">Compare</button>
+    </form>
+
+    {% if bert_result %}
+    <div class="result-box">
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Prediction</th>
+                <th>Confidence</th>
+            </tr>
+            <tr>
+                <td>BERT</td>
+                <td>{{ bert_result[0] }}</td>
+                <td>{{ bert_result[1] }}</td>
+            </tr>
+            <tr>
+                <td>RoBERTa</td>
+                <td>{{ roberta_result[0] }}</td>
+                <td>{{ roberta_result[1] }}</td>
+            </tr>
+        </table>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>

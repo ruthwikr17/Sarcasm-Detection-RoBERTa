@@ -20,14 +20,21 @@ def predict_sarcasm(tweet):
     inputs = tokenizer(
         tweet, return_tensors="pt", truncation=True, padding=True, max_length=128
     ).to(device)
+
     with torch.no_grad():
         outputs = model(**inputs)
         probs = torch.softmax(outputs.logits, dim=1).cpu().numpy()[0]
-        predicted_class = np.argmax(probs)
-        label = "Sarcastic" if predicted_class == 1 else "Not Sarcastic"
-        print(f"Tweet: {tweet}")
-        print(f"Prediction: {label}")
-        print(f"Confidence: {probs[predicted_class]:.4f}")
+
+    sarcasm_prob = probs[1]  # class-1 probability
+
+    if sarcasm_prob >= 0.60:
+        label = "Sarcastic"
+    else:
+        label = "Not Sarcastic"
+
+    print(f"Tweet: {tweet}")
+    print(f"Prediction: {label}")
+    print(f"Confidence: {sarcasm_prob:.4f}")
 
 
 # Load dataset

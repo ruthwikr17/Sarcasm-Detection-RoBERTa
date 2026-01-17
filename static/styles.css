@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #0f1117;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    background: #1a1c24;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+    color: white;
+    font-size: 16px;
+    resize: none;
+}
+
+.controls {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+select, button {
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+}
+
+select {
+    background: #1f2230;
+    color: white;
+}
+
+/* Elegant teal buttons */
+button {
+    background: #001aff;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #333;
+}
+
+/* Single prediction output */
+.result-box {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.prediction {
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.meta {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;   /* vertical spacing inside each block */
+}
+
+/* Increase spacing between Model Used and Confidence blocks */
+.result-box {
+    gap: 70px;  /* horizontal spacing between prediction and meta */
+}
+
+.meta span {
+    display: block;
+    font-size: 13px;
+    color: #aaa;
+    margin-bottom: 6px;  /* space between label and value */
+}
+
+.meta strong {
+    font-size: 20px;
+}
+
+/* Comparison layout */
+.compare-box {
+    margin-top: 50px;
+}
+
+.compare-box h2 {
+    margin-bottom: 25px;
+}
+
+.compare-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 20px;
+}
+
+.model-card {
+    background: #1a1c24;
+    padding: 20px 30px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    min-width: 200px;
+}
+
+.model-name {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.model-pred {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.model-conf {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.better {
+    font-size: 18px;
+    margin-top: 40px;
+    color: #fff;
+}
