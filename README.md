@@ -79,22 +79,10 @@ Web Dashboard Output
 ```
 
 
-**Model**
-**Accuracy**
-**Precision**
-**Recall**
-**F1-Score** <br>
-RoBERTa
-0.885
-0.871
-0.899
-0.885 <br>
-BERT
-0.862
-0.845
-0.881
-0.863
-
+| **Model** | **Accuracy** | **Precision** | **Recall** | **F1-Score** |
+| --- | --- | --- | --- | --- |
+| RoBERTa | 0.885 | 0.871 | 0.899 | 0.885 |
+| BERT | 0.862 | 0.845 | 0.881 | 0.863 |
 
 
 ## Project Structure <br>
@@ -121,23 +109,23 @@ Sarcasm-Detection-RoBERTa/
 
 ## Running the Web Dashboard <br>
 
-**Install Dependencies**
+**Install Dependencies** <br>
 ```pip install -r requirements.txt```
 
-**Run Flask App**
+**Run Flask App** <br>
 ```python app.py```
 
-**Open in Browser**
+**Open in Browser** <br>
 ```http://127.0.0.1:5000/```
 <br>
 
 
 ## Dashboard Capabilities <br>
-	•	Enter any tweet or sentence
-	•	Select BERT or RoBERTa model
-	•	Detect sarcasm in real-time
-	•	View prediction label and confidence
-	•	Compare both models on same input
+•	Enter any tweet or sentence
+•	Select BERT or RoBERTa model
+•	Detect sarcasm in real-time
+•	View prediction label and confidence
+•	Compare both models on same input
 
 ## Example Predictions
 
@@ -150,9 +138,9 @@ Confidence: 0.9997 <br>
 
 
 ## Future Enhancements
-	•	Multilingual sarcasm detection
-	•	Larger and more diverse datasets
-	•	Context-aware conversation-based sarcasm detection
+•	Multilingual sarcasm detection
+•	Larger and more diverse datasets
+•	Context-aware conversation-based sarcasm detection
 
 ## Author
 
