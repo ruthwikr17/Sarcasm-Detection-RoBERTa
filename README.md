@@ -14,13 +14,13 @@ This project builds a context-aware sarcasm detection system by fine-tuning Tran
 In addition to training high-performing models, the project provides an interactive web dashboard where users can enter any text, select a model, and instantly receive sarcasm predictions with confidence scores. <br>
 
 
-Key Features <br>
-	•	Fine-tuned BERT and RoBERTa models for sarcasm classification <br>
-	•	Real-time Flask dashboard for single-text prediction <br>
-	•	Model comparison mode to evaluate BERT vs RoBERTa on the same input <br>
-	•	Confidence visualization for each prediction <br>
-	•	Clean, dark-themed UI for demonstration and deployment <br>
-	•	Modular training, evaluation, and inference scripts <br>
+## Key Features <br>
+•	Fine-tuned BERT and RoBERTa models for sarcasm classification <br>
+•	Real-time Flask dashboard for single-text prediction <br>
+•	Model comparison mode to evaluate BERT vs RoBERTa on the same input <br>
+•	Confidence visualization for each prediction <br>
+•	Clean, dark-themed UI for demonstration and deployment <br>
+•	Modular training, evaluation, and inference scripts <br>
 
 
 ## Technologies Used <br>
