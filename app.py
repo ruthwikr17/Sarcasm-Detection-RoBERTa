@@ -8,32 +8,26 @@ app = Flask(__name__)
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# Load BERT
-bert_tokenizer = BertTokenizer.from_pretrained("Ruthvik17/bert_sarcasm_model")
-bert_model = BertForSequenceClassification.from_pretrained(
-    "Ruthvik17/bert_sarcasm_model"
-)
-bert_model.to(DEVICE)
-bert_model.eval()
 
-# Load RoBERTa
-roberta_tokenizer = RobertaTokenizer.from_pretrained("Ruthvik17/roberta_sarcasm_model")
-roberta_model = RobertaForSequenceClassification.from_pretrained(
-    "Ruthvik17/roberta_sarcasm_model"
-)
-roberta_model.to(DEVICE)
-roberta_model.eval()
+def load_model(model_name):
+    if model_name == "bert":
+        tokenizer = BertTokenizer.from_pretrained("Ruthvik17/bert_sarcasm_model")
+        model = BertForSequenceClassification.from_pretrained(
+            "Ruthvik17/bert_sarcasm_model"
+        )
+    else:
+        tokenizer = RobertaTokenizer.from_pretrained("Ruthvik17/roberta_sarcasm_model")
+        model = RobertaForSequenceClassification.from_pretrained(
+            "Ruthvik17/roberta_sarcasm_model"
+        )
+
+    model.to(DEVICE)
+    model.eval()
+    return tokenizer, model
 
 
 def predict(tweet, model_name):
-    if model_name == "bert":
-        tokenizer = bert_tokenizer
-        model = bert_model
-        model_label = "BERT"
-    else:
-        tokenizer = roberta_tokenizer
-        model = roberta_model
-        model_label = "RoBERTa"
+    tokenizer, model = load_model(model_name)
 
     inputs = tokenizer(
         tweet, return_tensors="pt", truncation=True, padding=True, max_length=128
@@ -45,10 +39,11 @@ def predict(tweet, model_name):
 
     pred_class = int(np.argmax(probs))
     confidence = float(probs[pred_class])
+    label = "Sarcastic" if pred_class == 1 else "Not Sarcastic"
 
-    prediction = "Sarcastic" if pred_class == 1 else "Not Sarcastic"
+    model_label = "BERT" if model_name == "bert" else "RoBERTa"
 
-    return prediction, confidence, model_label
+    return label, confidence, model_label
 
 
 @app.route("/", methods=["GET", "POST"])
