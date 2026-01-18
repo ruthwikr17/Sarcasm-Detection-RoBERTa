@@ -9,15 +9,17 @@ app = Flask(__name__)
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load BERT
-bert_tokenizer = BertTokenizer.from_pretrained("bert_sarcasm_model")
-bert_model = BertForSequenceClassification.from_pretrained("bert_sarcasm_model")
+bert_tokenizer = BertTokenizer.from_pretrained("Ruthvik17/bert_sarcasm_model")
+bert_model = BertForSequenceClassification.from_pretrained(
+    "Ruthvik17/bert_sarcasm_model"
+)
 bert_model.to(DEVICE)
 bert_model.eval()
 
 # Load RoBERTa
-roberta_tokenizer = RobertaTokenizer.from_pretrained("roberta_sarcasm_model")
+roberta_tokenizer = RobertaTokenizer.from_pretrained("Ruthvik17/roberta_sarcasm_model")
 roberta_model = RobertaForSequenceClassification.from_pretrained(
-    "roberta_sarcasm_model"
+    "Ruthvik17/roberta_sarcasm_model"
 )
 roberta_model.to(DEVICE)
 roberta_model.eval()
