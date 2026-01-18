@@ -6,22 +6,39 @@ from transformers import RobertaTokenizer, RobertaForSequenceClassification
 
 app = Flask(__name__)
 
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+DEVICE = torch.device("cpu")
+
+bert_tokenizer = BertTokenizer.from_pretrained("Ruthvik17/bert_sarcasm_model")
+bert_model = BertForSequenceClassification.from_pretrained(
+    "Ruthvik17/bert_sarcasm_model", dtype=torch.float32, low_cpu_mem_usage=False
+)
+bert_model.eval()
+
+roberta_tokenizer = RobertaTokenizer.from_pretrained("Ruthvik17/roberta_sarcasm_model")
+roberta_model = RobertaForSequenceClassification.from_pretrained(
+    "Ruthvik17/roberta_sarcasm_model",
+    dtype=torch.float32,
+    low_cpu_mem_usage=False,
+)
+roberta_model.eval()
 
 
 def load_model(model_name):
     if model_name == "bert":
         tokenizer = BertTokenizer.from_pretrained("Ruthvik17/bert_sarcasm_model")
         model = BertForSequenceClassification.from_pretrained(
-            "Ruthvik17/bert_sarcasm_model"
+            "Ruthvik17/bert_sarcasm_model",
+            dtype=torch.float32,
+            low_cpu_mem_usage=False,
         )
     else:
         tokenizer = RobertaTokenizer.from_pretrained("Ruthvik17/roberta_sarcasm_model")
         model = RobertaForSequenceClassification.from_pretrained(
-            "Ruthvik17/roberta_sarcasm_model"
+            "Ruthvik17/roberta_sarcasm_model",
+            dtype=torch.float32,
+            low_cpu_mem_usage=False,
         )
 
-    model.to(DEVICE)
     model.eval()
     return tokenizer, model
 
@@ -41,9 +58,7 @@ def predict(tweet, model_name):
     confidence = float(probs[pred_class])
     label = "Sarcastic" if pred_class == 1 else "Not Sarcastic"
 
-    model_label = "BERT" if model_name == "bert" else "RoBERTa"
-
-    return label, confidence, model_label
+    return label, confidence
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -54,8 +69,7 @@ def home():
     result = None
     confidence = None
     model_used = None
-
-    compare_results = None  # for dual model mode
+    compare_results = None
 
     if request.method == "POST":
         tweet = request.form["tweet"]
@@ -63,14 +77,14 @@ def home():
         action = request.form["action"]
 
         if action == "detect":
-            pred, conf, model_label = predict(tweet, selected_model)
+            pred, conf = predict(tweet, selected_model)
             result = pred
             confidence = f"{conf:.4f}"
-            model_used = model_label
+            model_used = selected_model.upper()
 
         elif action == "compare":
-            pred_b, conf_b, _ = predict(tweet, "bert")
-            pred_r, conf_r, _ = predict(tweet, "roberta")
+            pred_b, conf_b = predict(tweet, "bert")
+            pred_r, conf_r = predict(tweet, "roberta")
 
             compare_results = {
                 "bert_pred": pred_b,
@@ -86,10 +100,10 @@ def home():
         selected_model=selected_model,
         result=result,
         confidence=confidence,
-        model_used=model_used,
+        model_name=model_used,
         compare_results=compare_results,
     )
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=8080)
